@@ -22,8 +22,8 @@ import java.io.FileNotFoundException;
 public class TwitterClient extends OAuthBaseClient {
 	public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class;
 	public static final String REST_URL = "https://api.twitter.com/1.1/";
-	public static final String REST_CONSUMER_KEY = "WCLiWPBtqzaZjquFGGQ1m6awE";
-	public static final String REST_CONSUMER_SECRET = "ULzchnu6qRE5gMYv4mideAK0RddswrwWHJgpuxfXhf5rm011PQ";
+	public static final String REST_CONSUMER_KEY = "g20OwqbyYzdufDhuEGINBT8eB";
+	public static final String REST_CONSUMER_SECRET = "a4zVQ5A2EJxxWu6Q1bI1JNg7jOXhDQlwUEtqqR319lJUQqbli0";
 	public static final String REST_CALLBACK_URL = "oauth://stridera.com";
 
 	public TwitterClient(Context context) {

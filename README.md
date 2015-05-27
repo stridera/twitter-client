@@ -43,7 +43,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/YcIdkeC.gifv' title='Animated Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](Walkthrough_V1.gif)
 
 [Higher Resolution Youtube Video](https://youtu.be/4gW0nqUaLLQ)
 
@@ -55,6 +55,8 @@ To come:  Tabs/Mentions switch with tabs
 * View Others Profile
 * Search
 * Direct Messages
+
+Accidently posted my api/consumer secret.  The ones in this github have been deactivated and will no longer work.
 
 ## Open-source libraries used
 

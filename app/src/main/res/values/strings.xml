@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Twitter Client</string>
+    <string name="login_label">Log in</string>
+    <string name="title_activity_home_timeline">HomeTimelineActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="whatsup">What\'s up?</string>
+    <string name="tweet">Tweet</string>
+    <string name="str140">140</string>
+    <string name="compose_tweet">Compose Tweet</string>
+    <string name="title_activity_detailed_view">DetailedViewActivity</string>
+
+</resources>

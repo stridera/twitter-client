@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/abc_action_bar_default_padding_material">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTweetEditor"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:minLines="6"
+        android:maxLength="140"
+        android:hint="@string/whatsup"
+        android:gravity="top" />
+
+    <!--<fragment-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/fmtMap"-->
+        <!--class="com.google.android.gms.maps.SupportMapFragment"/>-->
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
+        android:id="@+id/ivCameraImage"
+        android:layout_below="@+id/etTweetEditor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomBar"
+        android:layout_below="@+id/ivCameraImage"
+        android:padding="@dimen/abc_action_bar_default_padding_material"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLocation"
+            android:background="@drawable/ic_location"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCamera"
+            android:background="@drawable/ic_camera"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnLocation"
+            android:layout_toEndOf="@+id/btnLocation" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/str140"
+            android:id="@+id/tvCharacterCount"
+            android:layout_toLeftOf="@+id/btnSubmit"
+            android:layout_toStartOf="@+id/btnSubmit"
+            android:gravity="center_vertical"
+            android:layout_alignBottom="@+id/btnSubmit"
+            android:layout_alignParentTop="true"
+            android:textColor="#ff7a7a7a" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tweet"
+            android:id="@+id/btnSubmit"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <!--Progress Handler-->
+    <View
+        android:id="@+id/vBlackout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layerType="hardware"
+        android:alpha="0"
+        android:visibility="gone"
+        android:background="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/bottomBar" />
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:id="@+id/ivProgress"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"/>
+
+</RelativeLayout>

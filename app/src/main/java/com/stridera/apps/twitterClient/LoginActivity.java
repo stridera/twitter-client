@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.codepath.oauth.OAuthLoginActionBarActivity;
-import com.stridera.apps.twitterApp.HomeTimelineActivity;
+import com.stridera.apps.twitterApp.Activities.HomeTimelineActivity;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 
@@ -19,10 +19,10 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 		setContentView(R.layout.activity_login);
 
         ImageView ivBird = (ImageView) findViewById(R.id.ivFlutterBird);
-        BitmapDrawable frame1 = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_twitter_bird_1);
-        BitmapDrawable frame2 = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_twitter_bird_2);
-        BitmapDrawable frame3 = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_twitter_bird_3);
-        BitmapDrawable frame4 = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_twitter_bird_4);
+        BitmapDrawable frame1 = (BitmapDrawable) getResources().getDrawable(R.mipmap.twitterbird1);
+        BitmapDrawable frame2 = (BitmapDrawable) getResources().getDrawable(R.mipmap.twitterbird2);
+        BitmapDrawable frame3 = (BitmapDrawable) getResources().getDrawable(R.mipmap.twitterbird3);
+        BitmapDrawable frame4 = (BitmapDrawable) getResources().getDrawable(R.mipmap.twitterbird4);
 
         AnimationDrawable animationDrawable = new AnimationDrawable();
         animationDrawable.addFrame(frame1, 200);

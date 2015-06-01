@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
-import com.stridera.apps.twitterApp.DetailedViewActivity;
-import com.stridera.apps.twitterApp.HomeTimelineActivity;
+import com.stridera.apps.twitterApp.Activities.DetailedViewActivity;
+import com.stridera.apps.twitterApp.Activities.HomeTimelineActivity;
+import com.stridera.apps.twitterApp.Activities.ViewProfileActivity;
+import com.stridera.apps.twitterApp.Utils.Utils;
 import com.stridera.apps.twitterClient.R;
 import com.stridera.apps.twitterClient.TwitterApplication;
 import com.stridera.apps.twitterClient.TwitterClient;
@@ -88,7 +90,17 @@ public class TweetsArrayAdapter extends ArrayAdapter {
 //        if (profileImage != null)
 //            viewHolder.ivUserProfile.setImageBitmap(profileImage);
 
+        viewHolder.ivUserProfile.setTag(user.getUserId());
         Picasso.with(getContext()).load(user.getProfile_image_url()).resize(52, 52).into(viewHolder.ivUserProfile);
+        viewHolder.ivUserProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long user_id = (long) v.getTag();
+                Intent intent = new Intent(parentContext, ViewProfileActivity.class);
+                intent.putExtra("user_id", user_id);
+                parentContext.startActivity(intent);
+            }
+        });
         viewHolder.tvUserName.setTag(tweet.getTweet_id());
         viewHolder.tvUserName.setText(user.getName());
         viewHolder.tvUserName.setOnClickListener(viewDetailed);
@@ -125,7 +137,7 @@ public class TweetsArrayAdapter extends ArrayAdapter {
         if (view == null) return;
 
         int count = 1;
-        if (view.getText().toString() != null && !view.getText().toString().isEmpty())
+        if (view.getText() != null && !view.getText().toString().isEmpty())
             count = Integer.valueOf(view.getText().toString()) + 1;
         view.setText(String.valueOf(count));
     }
@@ -158,7 +170,7 @@ public class TweetsArrayAdapter extends ArrayAdapter {
     private View.OnClickListener replySelected = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (!isNetworkAvailable()) {
+            if (!Utils.isNetworkAvailable(parentContext)) {
                 Toast.makeText(parentContext, "Network is not available.", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -173,7 +185,7 @@ public class TweetsArrayAdapter extends ArrayAdapter {
     private View.OnClickListener retweetSelected = new View.OnClickListener() {
         @Override
         public void onClick(final View v) {
-            if (!isNetworkAvailable()) {
+            if (!Utils.isNetworkAvailable(parentContext)) {
                 Toast.makeText(parentContext, "Network is not available.", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -210,7 +222,7 @@ public class TweetsArrayAdapter extends ArrayAdapter {
     private View.OnClickListener favoriteSelected = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (!isNetworkAvailable()) {
+            if (!Utils.isNetworkAvailable(parentContext)) {
                 Toast.makeText(parentContext, "Network is not available.", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -238,10 +250,4 @@ public class TweetsArrayAdapter extends ArrayAdapter {
             addAnimation(v);
         }
     };
-
-    private Boolean isNetworkAvailable() {
-        if (parentContext instanceof HomeTimelineActivity)
-            return ((HomeTimelineActivity) parentContext).isNetworkAvailable();
-        return true;
-    }
 }

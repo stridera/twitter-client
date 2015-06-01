@@ -51,14 +51,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.stridera.apps.twitterApp.HomeTimelineActivity"
+            android:name="com.stridera.apps.twitterApp.Activities.HomeTimelineActivity"
             android:icon="@drawable/ic_title_icon"
             android:label="@string/title_activity_home_timeline" >
         </activity>
         <activity
-            android:name="com.stridera.apps.twitterApp.DetailedViewActivity"
+            android:name="com.stridera.apps.twitterApp.Activities.DetailedViewActivity"
             android:label="@string/title_activity_detailed_view" >
         </activity>
+        <activity android:name="com.stridera.apps.twitterApp.Activities.ViewProfileActivity"
+            android:label="View Profile" />
     </application>
 
 </manifest>
